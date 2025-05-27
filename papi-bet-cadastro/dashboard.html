@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Papi Bet</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+</head>
+<body class="dashboard-page">
+    <!-- Header -->
+    <div class="dashboard-header">
+        <div class="header-content">
+            <div class="logo-section">
+                <img alt="Papi Bet" class="logo" src="images/logo.png"/>
+                <span class="welcome-text" id="welcomeText">Carregando...</span>
+            </div>
+            <div class="header-actions">
+                <button class="notification-btn">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+                <button class="profile-btn" onclick="logout()">
+                    <i class="fas fa-user"></i>
+                    <span>Sair</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="dashboard-container">
+        <!-- Status Banner -->
+        <div class="status-banner maintenance">
+            <div class="status-icon">
+                <i class="fas fa-tools"></i>
+            </div>
+            <div class="status-content">
+                <h2>🛠️ Sistema em Manutenção</h2>
+                <p>Estamos realizando melhorias para oferecer a melhor experiência de jogo.</p>
+                <div class="status-details">
+                    <span><i class="fas fa-clock"></i> Previsão: Em breve</span>
+                    <span><i class="fas fa-shield-alt"></i> Seus dados estão seguros</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- User Stats -->
+        <div class="stats-grid">
+            <div class="stat-card balance">
+                <div class="stat-icon">
+                    <i class="fas fa-wallet"></i>
+                </div>
+                <div class="stat-content">
+                    <h3>Saldo Disponível</h3>
+                    <p class="stat-value">R$ 50,00</p>
+                    <span class="stat-label">Bônus de boas-vindas</span>
+                </div>
+            </div>
+
+            <div class="stat-card spins">
+                <div class="stat-icon">
+                    <i class="fas fa-sync-alt"></i>
+                </div>
+                <div class="stat-content">
+                    <h3>Rodadas Grátis</h3>
+                    <p class="stat-value">100</p>
+                    <span class="stat-label">Disponíveis para uso</span>
+                </div>
+            </div>
+
+            <div class="stat-card level">
+                <div class="stat-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <div class="stat-content">
+                    <h3>Nível VIP</h3>
+                    <p class="stat-value">Bronze</p>
+                    <span class="stat-label">Próximo: Prata</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="quick-actions">
+            <h3>Ações Rápidas</h3>
+            <div class="actions-grid">
+                <button class="action-btn disabled" disabled>
+                    <i class="fas fa-play"></i>
+                    <span>Jogar Agora</span>
+                    <small>Em manutenção</small>
+                </button>
+                <button class="action-btn disabled" disabled>
+                    <i class="fas fa-gift"></i>
+                    <span>Resgatar Bônus</span>
+                    <small>Em manutenção</small>
+                </button>
+                <button class="action-btn disabled" disabled>
+                    <i class="fas fa-history"></i>
+                    <span>Histórico</span>
+                    <small>Em manutenção</small>
+                </button>
+                <button class="action-btn" onclick="window.location.href='index.html'">
+                    <i class="fas fa-home"></i>
+                    <span>Página Inicial</span>
+                    <small>Disponível</small>
+                </button>
+            </div>
+        </div>
+
+        <!-- Account Status -->
+        <div class="account-status">
+            <h3>Status da Conta</h3>
+            <div class="status-items">
+                <div class="status-item completed">
+                    <i class="fas fa-check-circle"></i>
+                    <div class="status-info">
+                        <h4>Cadastro Realizado</h4>
+                        <p>Conta criada com sucesso</p>
+                    </div>
+                </div>
+                <div class="status-item completed" id="phoneStatus">
+                    <i class="fas fa-mobile-alt"></i>
+                    <div class="status-info">
+                        <h4>Telefone Verificado</h4>
+                        <p>Número confirmado via SMS</p>
+                    </div>
+                </div>
+                <div class="status-item pending">
+                    <i class="fas fa-id-card"></i>
+                    <div class="status-info">
+                        <h4>Verificação de Identidade</h4>
+                        <p>Pendente - Será solicitada em breve</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="recent-activity">
+            <h3>Atividade Recente</h3>
+            <div class="activity-list">
+                <div class="activity-item">
+                    <div class="activity-icon success">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <div class="activity-content">
+                        <h4>Conta Criada</h4>
+                        <p>Bem-vindo ao Papi Bet!</p>
+                        <span class="activity-time" id="registrationTime">Agora</span>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-icon success">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <div class="activity-content">
+                        <h4>Bônus Creditado</h4>
+                        <p>R$ 50,00 + 100 rodadas grátis</p>
+                        <span class="activity-time">Agora</span>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-icon info">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="activity-content">
+                        <h4>Sistema em Manutenção</h4>
+                        <p>Melhorias em andamento</p>
+                        <span class="activity-time">Agora</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Support Section -->
+        <div class="support-section">
+            <div class="support-card">
+                <div class="support-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <div class="support-content">
+                    <h3>Precisa de Ajuda?</h3>
+                    <p>Nossa equipe está disponível 24/7 para te ajudar</p>
+                    <button class="support-btn">
+                        <i class="fas fa-comments"></i>
+                        Falar com Suporte
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="dashboard-script.js"></script>
+</body>
+</html>
