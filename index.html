@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papi Bet - Cadastre-se e Ganhe Bônus Exclusivo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+</head>
+<body>
+    <!-- Barra superior -->
+    <div class="top-bar">
+        <div class="menu-icon" id="menuToggle">≡</div>
+        <img alt="Papi Bet" class="logo" src="images/logo.png"/>
+        <div class="auth-buttons">
+            <button class="btn-login" id="loginBtn">LOGIN</button>
+            <button class="btn-register" id="registerBtn">CADASTRE-SE</button>
+        </div>
+    </div>
+
+    <!-- Banner de promoção -->
+    <div class="promo-banner">
+        <p>🎁🔥 CADASTRE-SE AGORA: Ganhe R$50 de bônus + 100 rodadas grátis! 🔥🎁</p>
+    </div>
+
+    <!-- Menu lateral -->
+    <div class="side-menu" id="sideMenu">
+        <div class="side-menu-header">
+            <img alt="Papi Bet" class="logo" src="images/logo.png"/>
+            <div>Menu</div>
+            <div class="close-menu" id="closeMenu">✕</div>
+        </div>
+        
+        <div class="menu-grid">
+            <div class="menu-grid-item green clickable-item">
+                <div>GRATIS</div>
+                <div>GAME OF SLOTS</div>
+                <div>Torneios de slots</div>
+            </div>
+            <div class="menu-grid-item blue clickable-item">
+                <div>Promoções</div>
+            </div>
+            <div class="menu-grid-item orange clickable-item">
+                <div>Torneio R$100k</div>
+            </div>
+            <div class="menu-grid-item navy clickable-item">
+                <div class="coming-soon">EM BREVE</div>
+                <div>F1 CORRIDA</div>
+            </div>
+        </div>
+        
+        <div class="menu-item clickable-item">
+            <i>♠</i> Cassino <span style="float:right;">▼</span>
+        </div>
+        <div class="menu-item clickable-item">
+            <i>🎮</i> PGsoft
+        </div>
+        <div class="menu-item clickable-item">
+            <i>🎥</i> Cassino ao vivo <span style="float:right;">▼</span>
+        </div>
+        <div class="menu-item clickable-item">
+            <i>🎁</i> Bônus de Cassino
+        </div>
+        <div class="menu-item clickable-item">
+            <i>🚀</i> Crash Games
+        </div>
+        <div class="menu-item clickable-item">
+            <i>👥</i> Indique Um Amigo
+        </div>
+        <div class="menu-item clickable-item">
+            <i>📖</i> Blog
+        </div>
+        <div class="menu-item menu-highlight clickable-item">
+            <i>🏷️</i> PROMOÇÕES
+        </div>
+
+        <!-- Banner de cadastro no menu lateral -->
+        <div class="app-download-banner">
+            <img alt="Bonus Icon" class="app-icon" src="images/app-icon.png"/>
+            <div class="app-info">
+                <h3>Bônus Exclusivo</h3>
+                <p>Cadastre-se e ganhe!</p>
+            </div>
+            <button class="download-app-btn clickable-item">CADASTRAR</button>
+        </div>
+    </div>
+
+    <!-- Overlay para quando o menu estiver aberto -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- Conteúdo principal -->
+    <div class="main-content">
+        <!-- Banner principal -->
+        <div class="main-banner">
+            <div class="banner-slider" id="bannerSlider">
+                <div class="banner-slide active">
+                    <img alt="Banner Indique Amigos" class="banner-image" src="images/banners/banner-indique-amigos.jpg"/>
+                </div>
+                <div class="banner-slide">
+                    <img alt="Promoção Papi Bet" class="banner-image" src="images/banners/banner-promocao.jpg"/>
+                </div>
+                <div class="banner-slide">
+                    <img alt="Bônus de boas-vindas" class="banner-image" src="images/banners/banner-bonus.jpg"/>
+                </div>
+                <div class="banner-slide">
+                    <img alt="Game of Slots" class="banner-image" src="images/banners/banner-slots.jpg"/>
+                </div>
+                <div class="banner-slide">
+                    <img alt="Cadastre-se na plataforma" class="banner-image" src="images/banners/banner-app.jpg"/>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carrossel de indicadores -->
+        <div class="carousel-indicators">
+            <div class="indicator active" data-slide="0"></div>
+            <div class="indicator" data-slide="1"></div>
+            <div class="indicator" data-slide="2"></div>
+            <div class="indicator" data-slide="3"></div>
+            <div class="indicator" data-slide="4"></div>
+        </div>
+
+        <!-- Banner de cadastro -->
+        <div class="app-download-section">
+            <div class="app-banner">
+                <div class="app-banner-content">
+                    <div class="app-icon-container">
+                        <img alt="Papi Bet Bonus" class="app-icon-large" src="images/app-icon.png"/>
+                    </div>
+                    <div class="app-banner-text">
+                        <h2>CADASTRO COM BÔNUS</h2>
+                        <p>Crie sua conta e ganhe R$50 + rodadas grátis!</p>
+                        <button class="download-app-banner-btn clickable-item">CADASTRAR AGORA</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Promoções em destaque -->
+        <div class="promo-badges">
+            <div class="promo-badge clickable-item">
+                <img alt="Cadastre-se e ganhe" class="badge-image" src="images/badges/badge-indique-amigos.png"/>
+            </div>
+            <div class="promo-badge clickable-item">
+                <img alt="Ganhe até R$600" class="badge-image" src="images/badges/badge-ganhe-rodadas.png"/>
+            </div>
+        </div>
+
+        <!-- Categorias de jogos -->
+        <div class="game-categories">
+            <div class="category clickable-item">
+                <div class="category-icon">
+                    <img alt="Cassino ao Vivo" src="images/icons/cassino-ao-vivo.png"/>
+                </div>
+                <div class="category-name">Cassino ao Vivo</div>
+            </div>
+            <div class="category clickable-item">
+                <div class="category-icon">
+                    <img alt="Cassino" src="images/icons/cassino.png"/>
+                </div>
+                <div class="category-name">Cassino</div>
+            </div>
+            <div class="category clickable-item">
+                <div class="category-icon">
+                    <img alt="Esportes" src="images/icons/esportes.png"/>
+                </div>
+                <div class="category-name">Esportes</div>
+            </div>
+            <div class="category clickable-item">
+                <div class="category-icon">
+                    <img alt="Jogos Crash" src="images/icons/crash.png"/>
+                </div>
+                <div class="category-name">Jogos Crash</div>
+            </div>
+        </div>
+
+        <!-- Todos os jogos -->
+        <div class="section-header">
+            <h2>Todos Os Jogos</h2>
+            <a class="view-all clickable-item" href="#">VER TODOS ▶</a>
+        </div>
+        <div class="games-row">
+            <div class="game-card clickable-item"><img class="game-image" src="images/games/tigre-sortudo-1000.jpg"/><div class="game-title">Tigre Sortudo 1000</div></div>
+            <div class="game-card clickable-item"><img class="game-image" src="images/games/fortune-snake.jpg"/><div class="game-title">Fortune Snake</div></div>
+            <div class="game-card clickable-item"><img class="game-image" src="images/games/fortune-tiger.jpg"/><div class="game-title">Fortune Tiger</div></div>
+            <div class="game-card clickable-item"><img class="game-image" src="images/games/duel-at-dawn.jpg"/><div class="game-title">Duel at Dawn</div></div>
+        </div>
+
+        <!-- Popular em PapiGames -->
+        <div class="section-header">
+            <h2>Popular Em PapiGames</h2>
+            <a class="view-all clickable-item" href="#">VER TODOS ▶</a>
+        </div>
+        <div class="games-row">
+            <div class="game-card clickable-item"><img class="game-image" src="images/games/football.jpg"/><div class="game-title">FOOTBALL</div></div>
+            <div class="game-card clickable-item"><img class="game-image" src="images/games/blackjack.jpg"/><div class="game-title">FUTEBOL STUDIO</div></div>
+            <div class="game-card clickable-item"><img class="game-image" src="images/games/baccarat.jpg"/><div class="game-title">BACCARAT</div></div>
+            <div class="game-card clickable-item"><img class="game-image" src="images/games/roulette.jpg"/><div class="game-title">ROULETTE</div></div>
+        </div>
+
+        <!-- Maiores Vitórias -->
+        <div class="big-wins">
+            <h2>Maiores Vitórias</h2>
+            <div class="wins-table">
+                <div class="table-header">
+                    <div class="game-col">Jogo</div>
+                    <div class="value-col">Valor da Vitória</div>
+                </div>
+                <div class="table-row">
+                    <div class="game-col">⚙️ Sugar Rush 1000</div>
+                    <div class="value-col">R$ 1,437,000.00</div>
+                </div>
+                <div class="table-row alt">
+                    <div class="game-col">⚙️ Sugar Rush 1000</div>
+                    <div class="value-col">R$ 1,403,320.00</div>
+                </div>
+                <div class="table-row">
+                    <div class="game-col">⚙️ Sweet Bonanza Dice...</div>
+                    <div class="value-col">R$ 1,057,630.00</div>
+                </div>
+                <div class="table-row alt">
+                    <div class="game-col">⚙️ Wanted</div>
+                    <div class="value-col">R$ 866,250.00</div>
+                </div>
+                <div class="table-row">
+                    <div class="game-col">⚙️ Power of Merlin Meg...</div>
+                    <div class="value-col">R$ 773,600.00</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Espaçador para a navegação inferior -->
+        <div class="bottom-spacer"></div>
+    </div>
+
+    <!-- Barra de navegação inferior -->
+    <div class="bottom-nav">
+        <div class="nav-item clickable-item">
+            <div class="icon">
+                <img alt="Esportes" src="images/icons/esportes-nav.png"/>
+            </div>
+            <span>Esportes</span>
+        </div>
+        <div class="nav-item clickable-item">
+            <div class="icon">
+                <img alt="Ao Vivo" src="images/icons/ao-vivo-nav.png"/>
+            </div>
+            <span>Ao Vivo</span>
+        </div>
+        <div class="nav-item nav-item-special clickable-item">
+            <div class="special-badge">GRATIS</div>
+            <div class="special-text">GAME OF SLOTS</div>
+            <span>Torneios de Slots</span>
+        </div>
+        <div class="nav-item clickable-item">
+            <div class="icon">
+                <img alt="Torneio" src="images/icons/torneio-nav.png"/>
+            </div>
+            <span>Torneio</span>
+        </div>
+        <div class="nav-item clickable-item">
+            <div class="icon">
+                <img alt="Jogos" src="images/icons/jogos-nav.png"/>
+            </div>
+            <span>Jogos</span>
+        </div>
+        <div class="nav-item clickable-item">
+            <div class="icon">
+                <img alt="Suporte" src="images/icons/suporte-nav.png"/>
+            </div>
+            <span>Suporte</span>
+        </div>
+    </div>
+
+    <!-- Modal de Login -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content auth-modal">
+            <div class="modal-header">
+                <h2>Entrar na sua conta</h2>
+                <button class="close-btn" id="closeLoginModal">×</button>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginCpf">CPF</label>
+                        <input type="text" id="loginCpf" name="cpf" placeholder="000.000.000-00" maxlength="14" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPhone">Telefone</label>
+                        <input type="text" id="loginPhone" name="phone" placeholder="(11) 99999-9999" maxlength="15" required>
+                    </div>
+                    <button type="submit" class="auth-btn">ENTRAR</button>
+                </form>
+                <div class="auth-switch">
+                    <p>Não tem conta? <a href="#" id="switchToRegister">Cadastre-se aqui</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Cadastro -->
+    <div class="modal" id="registerModal">
+        <div class="modal-content auth-modal">
+            <div class="modal-header">
+                <h2>Cadastre-se e Ganhe R$50</h2>
+                <button class="close-btn" id="closeRegisterModal">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="bonus-highlight">
+                    <i class="fas fa-gift"></i>
+                    <span>Bônus de R$50 + 100 rodadas grátis!</span>
+                </div>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="fullName">Nome Completo</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Seu nome completo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefone</label>
+                        <input type="text" id="phone" name="phone" placeholder="(11) 99999-9999" maxlength="15" required>
+                    </div>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="ageConfirm" name="ageConfirm" required>
+                            <label for="ageConfirm">Confirmo que tenho mais de 18 anos</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <label for="terms">Aceito os <a href="#" target="_blank">termos e condições</a></label>
+                        </div>
+                    </div>
+                    <button type="submit" class="auth-btn">CADASTRAR E GANHAR BÔNUS</button>
+                </form>
+                <div class="auth-switch">
+                    <p>Já tem conta? <a href="#" id="switchToLogin">Faça login aqui</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Sucesso -->
+    <div class="modal" id="successModal">
+        <div class="modal-content success-modal">
+            <div class="modal-header">
+                <h2>🎉 Parabéns!</h2>
+                <button class="close-btn" id="closeSuccessModal">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="success-content">
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Cadastro realizado com sucesso!</h3>
+                    <div class="bonus-info">
+                        <div class="bonus-item">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <span>R$ 50,00 de bônus</span>
+                        </div>
+                        <div class="bonus-item">
+                            <i class="fas fa-sync-alt"></i>
+                            <span>100 rodadas grátis</span>
+                        </div>
+                    </div>
+                    <p>Seu bônus foi creditado automaticamente na sua conta!</p>
+                    <button class="success-btn" id="goToVerification">VERIFICAR TELEFONE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
